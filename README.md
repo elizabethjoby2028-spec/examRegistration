@@ -127,14 +127,20 @@ docker build -t college-exam-portal:latest .
 ```
 
 ### 2. Run the Docker Container
-Map the container's internal port `80` to host port `8080`:
+Map the container's internal port `80` to host port `8080` (or `8085` if 8080 is already used by another project):
 ```bash
+# Standard port 8080
 docker run -d --name exam-portal -p 8080:80 college-exam-portal:latest
+
+# Alternative port 8085 (if 8080 has another service or cached website)
+docker run -d --name exam-portal-8085 -p 8085:80 college-exam-portal:latest
 ```
 
 ### 3. Access the Application
 Open your browser and visit:
-👉 **[http://localhost:8080](http://localhost:8080)**
+👉 **[http://localhost:8080](http://localhost:8080)** or **[http://localhost:8085](http://localhost:8085)**
+
+> **Note on Browser Cache:** If you previously ran another application (such as Quizverse) on `localhost:8080`, your browser's Service Worker or cache may still show the old website. Use **`Ctrl + Shift + R`** (Hard Refresh), open in an **Incognito window**, or use the clean alternative port **`http://localhost:8085`**.
 
 ### 4. Stop and Remove the Container
 ```bash
