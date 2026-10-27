@@ -152,30 +152,27 @@ docker rm exam-portal
 
 ## 🌐 Publishing to Docker Hub
 
-Follow these steps to publish the container image to your public Docker Hub repository:
+The Docker image is published and available on Docker Hub:
+👉 **[hub.docker.com/r/elizabethjoby101/college-exam-portal](https://hub.docker.com/r/elizabethjoby101/college-exam-portal)**
 
-### Step 1: Log in to Docker Hub
+### Run directly from Docker Hub:
 ```bash
-docker login
-```
-*(Enter your Docker Hub username and password/personal access token)*
-
-### Step 2: Tag Your Local Image
-Replace `YOUR_DOCKERHUB_USERNAME` with your actual Docker Hub handle:
-```bash
-docker tag college-exam-portal:latest YOUR_DOCKERHUB_USERNAME/college-exam-portal:v1.0.0
-docker tag college-exam-portal:latest YOUR_DOCKERHUB_USERNAME/college-exam-portal:latest
+docker run -d -p 8085:80 elizabethjoby101/college-exam-portal:latest
 ```
 
-### Step 3: Push Image to Docker Hub
-```bash
-docker push YOUR_DOCKERHUB_USERNAME/college-exam-portal:v1.0.0
-docker push YOUR_DOCKERHUB_USERNAME/college-exam-portal:latest
-```
+---
 
-### Step 4: Anyone Can Now Pull and Run Your Image!
+## 🌿 Git & GitHub Repository
+
+The source code is hosted on GitHub:
+👉 **[github.com/elizabethjoby2028-spec/examRegistration](https://github.com/elizabethjoby2028-spec/examRegistration)**
+
+### Clone and run locally:
 ```bash
-docker run -d -p 8080:80 YOUR_DOCKERHUB_USERNAME/college-exam-portal:latest
+git clone https://github.com/elizabethjoby2028-spec/examRegistration.git
+cd examRegistration
+npm install
+npm run dev
 ```
 
 ---
